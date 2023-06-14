@@ -66,9 +66,9 @@ spring_flow$Outflow_marjun_prev_year<-lag(spring_flow$Outflow_marjun)
 spring_flow$Inflow_marjun_prev_year<-lag(spring_flow$Inflow_marjun)
 
 #Grab WSIHIST data for unimpaired runoff
-WSIHIST<- water_year_indices %>% rename(Year=WY)
+WSIHIST<- water_year_indices %>% rename(Year=WY) %>% group_by(Year) %>% summarise(WYsum=sum(WYsum))
 
-full_flow_data<-left_join(spring_flow,WSIHIST[,c("Year","WYsum")]) %>% rename(Unimpaired_runoff=WYsum)
+full_flow_data<-left_join(spring_flow,WSIHIST) %>% rename(Unimpaired_runoff=WYsum)
 
 ##############################################################################
 #Load biological data
