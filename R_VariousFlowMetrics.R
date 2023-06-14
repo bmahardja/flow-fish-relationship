@@ -101,19 +101,19 @@ master_data$year_short<-sprintf('%02d',master_data$Year %% 100)
 ################################################################################
 
 linearmodel_lfs_updated_x2<- lm(log_lfs ~ X2_janjun + step_1987, data = master_data)
-linearmodel_stb_updated_x2<- lm(tns_log_sb ~ X2_junjul, data = master_data)
+linearmodel_stb_updated_x2<- lm(tns_suisun_sb ~ X2_junjul, data = master_data)
 linearmodel_splt_updated_x2<- lm(log_spt ~ X2_febmay , data = master_data)
 
 linearmodel_lfs_updated_outflow<- lm(log_lfs ~ Outflow_janjun + step_1987, data = master_data)
-linearmodel_stb_updated_outflow<- lm(tns_log_sb ~ Outflow_junjul, data = master_data)
+linearmodel_stb_updated_outflow<- lm(tns_suisun_sb ~ Outflow_junjul, data = master_data)
 linearmodel_splt_updated_outflow<- lm(log_spt ~ Outflow_febmay , data = master_data)
 
 linearmodel_lfs_updated_inflow<- lm(log_lfs ~ Inflow_janjun + step_1987, data = master_data)
-linearmodel_stb_updated_inflow<- lm(tns_log_sb ~ Inflow_junjul, data = master_data)
+linearmodel_stb_updated_inflow<- lm(tns_suisun_sb ~ Inflow_junjul, data = master_data)
 linearmodel_splt_updated_inflow<- lm(log_spt ~ Inflow_febmay , data = master_data)
 
 linearmodel_lfs_updated_Unimpaired_runoff<- lm(log_lfs ~ Unimpaired_runoff + step_1987, data = master_data)
-linearmodel_stb_updated_Unimpaired_runoff<- lm(tns_log_sb ~Unimpaired_runoff, data = master_data)
+linearmodel_stb_updated_Unimpaired_runoff<- lm(tns_suisun_sb ~Unimpaired_runoff, data = master_data)
 linearmodel_splt_updated_Unimpaired_runoff<- lm(log_spt ~ Unimpaired_runoff , data = master_data)
 
 sum_table<-data.frame(species_relationship = c('Longfin Smelt','Striped Bass','Splittail'),
